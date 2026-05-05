@@ -6,6 +6,14 @@ const nextConfig: NextConfig = {
   images: {
     domains: ['sprint-be-project.s3.ap-northeast-2.amazonaws.com'],
   },
+  async rewrites() {
+    return [
+      {
+        source: '/api/:path*',
+        destination: 'http://43.201.167.58:3000/api/:path*',
+      },
+    ];
+  },
   webpack(config: Configuration) {
     config.module?.rules?.push({
       test: /\.svg$/,
