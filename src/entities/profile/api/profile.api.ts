@@ -21,9 +21,5 @@ export const patchChangeProfile = async (data: ChangeProfileRequest) => {
     formData.append('file', data.file);
   }
 
-  return axios.patch('/users/me', formData, {
-    headers: {
-      'Content-Type': 'multipart/form-data',
-    },
-  });
+  return axios.patch('/users/me', formData);
 };
