@@ -3,7 +3,7 @@ import axios from '@/shared/lib/axios';
 interface ChangeProfileRequest {
   currentPassword?: string;
   newPassword?: string;
-  file?: File;
+  file?: File | null;
 }
 
 export const patchChangeProfile = async (data: ChangeProfileRequest) => {
